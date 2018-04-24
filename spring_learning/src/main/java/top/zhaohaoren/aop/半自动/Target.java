@@ -1,25 +1,17 @@
 package top.zhaohaoren.aop.半自动;
 
 /**
- * TargetImpl Create on 2018/4/19
+ * Target Create on 2018/4/19
  * Description:
- * 目标类
+ * 目标类接口,使用jdk的代理必须要提供要被代理类的接口
  * author justin
  * version 1.0
  * Copyright (c) 2018/4/19 by justin
  */
+public interface Target {
+    void function1();
 
-public class Target {
-    public void function1() {
-        System.out.println("function1");
-    }
+    void function2();
 
-    public void function2() {
-        System.out.println("function2");
-    }
-    
-    public void function3() {
-        System.out.println("function3");
-    }
-
+    void function3();
 }

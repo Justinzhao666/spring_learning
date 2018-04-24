@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--目标类的bean-->
+    <bean id="targetID" class="top.zhaohaoren.aop.半自动.TargetImpl"/>
+    <!--创建切面类-->
+    <bean id="aspectID" class="top.zhaohaoren.aop.半自动.Aspect"/>
+    <!--代理类的bean
+        使用工厂bean aop自带的ProxyFactoryBean，生成特定的代理对象
+        生成这个对象需要注入一些参数：（和jdk的代理很类似）
+        interfaces: 接口们
+        target: 目标类
+        interceptorNames: 切面类名称string类型 用value注入
+    -->
+    <bean id="proxyTargetID" class="org.springframework.aop.framework.ProxyFactoryBean" >
+        <property name="interfaces" value="top.zhaohaoren.aop.半自动.Target"/>
+        <property name="target" ref="targetID"/>
+        <property name="interceptorNames" value="aspectID"/>
+    </bean>
+</beans>
