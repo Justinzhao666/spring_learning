@@ -1,8 +1,6 @@
 package top.zhaohaoren.aop.手动.jdk动态代理;
 
 import org.junit.Test;
-import top.zhaohaoren.aop.手动.jdk动态代理.BeanFactory;
-import top.zhaohaoren.aop.手动.jdk动态代理.Target;
 
 public class AopJDKTest {
 
